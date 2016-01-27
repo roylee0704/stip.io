@@ -12,17 +12,15 @@ func main() {
 
 }
 
+//
 func bubble(v []int, n int) {
-
-	if n > len(v) {
-		n = len(v)
-	}
-
-	for pass := n - 1; pass >= 1; pass-- {
+	for pass := len(v) - 1; pass >= 0; pass-- {
 		for compare := 0; compare < pass; compare++ {
 			if v[compare] > v[compare+1] {
+				//swap
 				v[compare], v[compare+1] = v[compare+1], v[compare]
 			}
 		}
 	}
+
 }
