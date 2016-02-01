@@ -9,7 +9,6 @@ func main() {
 
 	bubble(val, 400)
 	fmt.Printf("%v\n", val)
-
 }
 
 //
