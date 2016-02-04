@@ -5,21 +5,25 @@ package main
 import "fmt"
 
 func main() {
-	val := []int{6, 5, 4, 3, 2, 9}
+	val := []int{6, 5, 4, 3, 2, 9, 1, -1, 22, 30}
 
 	bubble(val, 400)
 	fmt.Printf("%v\n", val)
 }
 
 //
-func bubble(v []int, n int) {
-	for pass := len(v) - 1; pass >= 0; pass-- {
-		for compare := 0; compare < pass; compare++ {
-			if v[compare] > v[compare+1] {
-				//swap
-				v[compare], v[compare+1] = v[compare+1], v[compare]
+func bubble(v []int, limit int) {
+
+	n := len(v)
+	if limit > n {
+		limit = n
+	}
+
+	for pass := limit - 1; pass >= 0; pass-- {
+		for swap := 0; swap < pass; swap++ {
+			if v[swap] > v[swap+1] {
+				v[swap], v[swap+1] = v[swap+1], v[swap]
 			}
 		}
 	}
-
 }
